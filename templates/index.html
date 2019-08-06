@@ -13,6 +13,9 @@
                 <center><a href="{% url 'video:detener' %}" class="btn btn-primary">Detener captura</a></center>
             {% else %}
                 <center><a href="{% url 'video:inicia' %}" class="btn btn-primary">Iniciar captura</a></center>
+                {% if imagen_capturada is not None  %}
+                  <img src="data:image/jpeg;charset=utf-8;base64,  {{imagen_capturada}}" ></img>
+                {% endif %} 
             {% endif %} 
     </form>
   </body>
